@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="de">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>KeystoneJS - Node.js CMS & Web Application Platform</title>
+
+		<meta name="description" content="A Talk about KeystoneJS, an open source framework for developing database-driven websites, applications and APIs in Node.js. Built on Express and MongoDB.">
+		<meta name="author" content="Matthias Gutjahr">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/mattsches.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Keystone JS</h1>
+					<h3>Node.js CMS & Web Application Platform</h3>
+					<p>
+						<small>Vorgestellt von <a href="http://matthias-gutjahr.de/">Matthias Gutjahr</a> / <a href="https://twitter.com/mattsches">@mattsches</a></small>
+					</p>
+				</section>
+
+				<section data-markdown data-state="about" data-background="url(/img/mattsches.jpg)" data-background-size="100%">
+					## About me
+
+					* Matthias Gutjahr, selbständiger Web-Entwickler aus Wiesbaden
+					* Orga [RheinMainJS](http://rheinmainjs.de/), [PHPUG Rheinhessen](http://www.phpug-rheinhessen.de/)
+					* [@mattsches](https://twitter.com/mattsches) (fast überall)
+				</section>
+
+				<section data-state="keystone">
+					<a href="http://keystonejs.com/"><img src="img/keystonsjs_website.png" alt="Screenshot der KeystoneJS Webseite"/></a>
+				</section>
+
+				<section data-markdown>
+					## Was ist KeystoneJS?
+
+					* Ein Node.js CMS und Web Application (MVC) Framework
+					* Entwickelt in Sydney, Australien, u.a. für [SydJS](http://www.sydjs.com/)
+					* Veröffentlicht unter der [MIT Lizenz](http://opensource.org/licenses/MIT)
+				</section>
+
+				<section>
+					<section data-markdown>
+						### Warum Keystone?
+
+						Es gibt ja noch andere JS-Frameworks und -CMSe
+					</section>
+					<section data-state="apostrophe" data-markdown data-background="url(/img/apostrophe.png)" data-background-size="contain">
+						### [Apostrophe](http://apostrophenow.org/)
+
+						* Reines CMS
+						* Früher ein PHP-MySQL-Projekt (Symfony), jetzt Node.js und MongoDB
+						* Inhalte können direkt im Frontend bearbeitet werden
+					</section>
+					<section data-markdown data-state="ghost" data-background="url(/img/ghost.png)" data-background-size="contain">
+						### [Ghost](https://ghost.org/)
+
+						* "Just a blogging platform" mit vielen Themes
+						* Markdown-Editor
+						* SQLite oder MySQL
+					</section>
+					<section data-markdown data-state="calipso" data-background="url(/img/calipso.jpg)" data-background-size="contain">
+						### [Calipso](http://www.calip.so/)
+
+						* CMS based on NodeJS, MongoDB
+						* not much documentation
+					</section>
+					<section data-markdown data-state="hatch" data-background="url(/img/hatch.jpg)" data-background-size="contain">
+						### [Hatch.js](http://hatchjs.com/)
+
+						* CMS auf NodeJS und Redis
+						* Demo site broken
+						* Kaum Doku
+					</section>
+					<section data-markdown>
+						### et cetera&nbsp;&hellip;
+					</section>
+				</section>
+
+				<section>
+					<section data-markdown>
+						## Komponenten / Building Blocks
+
+						* [express.js](http://expressjs.com/) Web Server Framework
+						* [MongoDB](http://www.mongodb.org/)  (via [mongoose](http://mongoosejs.com/))
+					</section>
+					<section data-markdown>
+						## Komponenten / Building Blocks
+
+						* *LESS* oder *SCSS* als Stylesheet-Sprache
+						* *Gulp* oder *Grunt* für den Build-Prozess
+						* [*dotenv*](https://www.npmjs.com/package/dotenv) für Umgebungsvariablen
+					</section>
+					<section data-markdown>
+						## Komponenten / Building Blocks
+
+						* Templating Engines:
+							* [Jade](http://jade-lang.com/)
+							* [Handlebars](http://handlebarsjs.com/)
+							* [Swig](https://paularmstrong.github.io/swig/)
+							* [Nunjucks](https://mozilla.github.io/nunjucks/)
+					</section>
+					<section>
+						<img src="img/nunjucks.jpg"/>
+					</section>
+					<section>
+						<img src="img/uberspace.png"/>
+					</section>
+				</section>
+
+				<section data-markdown>
+					## Features
+
+					* Kickstart/Scaffolding mit dem [Yeoman](http://yeoman.io/) Generator:
+					* Automatisch generiertes [Backend](http://rheinmainjs.de/keystone)
+					* Flash Messages
+					* Authentication & Session- und User-Management eingebaut
+				</section>
+
+				<section data-markdown>
+					## Externe Dienste
+
+					* [Mandrill](https://mandrill.com/) (E-Mail-Infrastrukturdienst von Mailchimp)
+					* [Cloudinary](http://cloudinary.com/) (Bilderdienst in der Cloud, CDN)
+					* [Embed.ly](http://embed.ly/) (Einbetten von Inhalten via oEmbed)
+				</section>
+
+				<section data-markdown>
+					## Erweiterbarkeit
+
+					* Einfach Modul XY der `package.json` hinzufügen
+					* installieren
+					* und `require('xy')`
+				</section>
+
+				<section data-markdown>
+					## Yeoman Generator
+
+					```bash
+					$ (sudo) npm install -g generator-keystone
+					$ mkdir rheinmainjs
+					$ cd rheinmainjs
+					$ yo keystone
+					... einige Angaben ...
+					fertig!
+					```
+				</section>
+
+				<section data-markdown>
+					## Project Structure
+
+					```
+					|--lib (Custom libraries and other code)
+					|--models (Your applications database models)
+					|--public (Static files (css, js, images, etc.))
+					|--routes
+					|  |--api (Your application's api controllers)
+					|  |--views (Your application's view controllers)
+					|  |--index.js (Initialises your application's routes and views)
+					|  |--middleware.js (Custom middleware for your routes)
+					|--templates
+					|  |--includes (Common .jade includes go in here)
+					|  |--layouts (Base .jade layouts go in here)
+					|  |--mixins (Common .jade mixins go in here)
+					|  |--views (Your application's view templates)
+					|--updates (Data population and migration scripts)
+					|--package.json (Project configuration for npm)
+					|--web.js (Main script that starts your application)
+					```
+				</section>
+
+				<section>
+				<section>
+					<h2>Models</h2>
+
+					<pre><code>
+// models/users.js
+
+var keystone = require('keystone'),
+    Types = keystone.Field.Types;
+
+var User = new keystone.List('User');
+
+User.add({
+    name: { type: Types.Name, required: true, index: true },
+    email: { type: Types.Email, initial: true, required: true, index: true },
+    password: { type: Types.Password, initial: true },
+    isOrganiser: { type: Boolean, initial: false }
+});
+
+User.register();
+					</code></pre>
+				</section>
+					<section data-markdown>
+						### Interne Feldtypen
+
+						Boolean, Text, Textarea, Email, Url, Html, Color, Date, Datetime, Number, Money, Select, Markdown, Name, Password, Location, CloudinaryImage, LocalFile, S3File, Embedly, …
+					</section>
+
+				</section>
+
+				<section data-markdown>
+					### Route Controllers
+
+					```js
+					var keystone = require('keystone');
+					exports = module.exports = function (req, res) {
+						var view = new keystone.View(req, res), locals = res.locals;
+						locals.section = 'about';
+						locals.data = { organizers: [] };
+						view.on('init', function (next) {
+							keystone.list('User').model.find()
+								.where('isOrganiser', true)
+								.sort('name')
+								.exec(function (err, result) {
+									locals.data.organizers = result;
+									next(err);
+								});
+						});
+						view.render('views/about');
+					};
+					```
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+					### Views
+
+					```
+					{% extends "../layouts/default.html.swig" %}
+					{% block content %}
+					<div class="container">
+						<div class="row">
+							<div>
+								<p><span class="rmjs">RheinMainJS</span> wird organisiert von</p>
+								<ul class="list-unstyled">
+								{% for user in data.organizers %}
+								<li>
+									<img src="{{ user._.email.gravatarUrl() }}" class="img-circle img-gravatar"/>
+									<a href="{{ user.website }}">{{ user.name.full }}</a>
+								</li>
+								{% endfor %}
+								</ul>
+							</div>
+						</div>
+					</div>
+					{% endblock %}
+					```
+					</script>
+				</section>
+
+				<section>
+					<a href="http://rheinmainjs.de/"><img src="img/orga.png"></a>
+				</section>
+
+				<section>
+					<img src="img/thatsallfolks.jpg">
+					<a href="http://dan232323.deviantart.com/art/Pinkie-Pie-Thats-All-Folks-454693000">http://dan232323.deviantart.com/</a>
+				</section>
+
+				<section data-markdown>
+					### Thanks!
+
+					* [http://keystonejs.com/](http://keystonejs.com/)
+					* [https://github.com/rheinmainjs/rmjs-keystone](https://github.com/rheinmainjs/rmjs-keystone)
+					* [http://rheinmainjs.de/](http://rheinmainjs.de/)
+				</section>
+
+			</div>
+
+		</div>
+
+		<div id="rmjs-logo"></div>
+
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
